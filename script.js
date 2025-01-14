@@ -7,105 +7,106 @@ document.addEventListener("scroll", () => {
     bigText.style.transform = `translateY(${scrollY * 0.5}px)`; // Parallax-like effect
 });
 
-/** */
-// Import Three.js (include in your HTML <head> if not already done)
-// <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+/** Blob Setup */
+// Select the canvas element where the blob will render
+const blobCanvas = document.querySelector('#blob'); // Blob container in your HTML
 
-const blobCanvas = document.querySelector('#blob'); // Renamed from 'canvas' to 'blobCanvas'
+// Create the WebGL renderer, enabling transparency with `alpha: true`
 const renderer = new THREE.WebGLRenderer({ canvas: blobCanvas, alpha: true });
-renderer.setSize(blobCanvas.clientWidth, blobCanvas.clientHeight);
-renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(blobCanvas.clientWidth, blobCanvas.clientHeight); // Match canvas dimensions
+renderer.setPixelRatio(window.devicePixelRatio); // Optimize for high-DPI screens
 
+// Create a 3D scene
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, blobCanvas.clientWidth / blobCanvas.clientHeight, 0.1, 2000);
-camera.position.z = 3;
 
+// Set up the camera
+const camera = new THREE.PerspectiveCamera(
+    75, // Field of view in degrees
+    blobCanvas.clientWidth / blobCanvas.clientHeight, // Aspect ratio
+    0.1, // Near clipping plane
+    2000 // Far clipping plane
+);
+camera.position.z = 3; // Position the camera slightly away from the blob
 
-// Light
-const light = new THREE.DirectionalLight(0xffffff, 1);
-light.position.set(1, 1, 1).normalize();
-scene.add(light);
+/** Lighting */
 
-// Blob Geometry
-const geometry = new THREE.SphereGeometry(1.5, 23, 64);
+// Ambient light adds a subtle base light to the entire scene
+const ambientLight = new THREE.AmbientLight(0x330033, 0.5); // Dim purple color
+scene.add(ambientLight);
+
+// Point light provides a localized bright light
+const pointLight = new THREE.PointLight(0xff00ff, 1.5, 1000); // Bright pink light
+pointLight.position.set(2, 3, 4); // Place it at an angle for depth and shadows
+scene.add(pointLight);
+
+/** Blob Geometry and Material */
+// Create a sphere geometry with more detail for smooth morphing
+const geometry = new THREE.SphereGeometry(1.5, 64, 64); // Radius, width segments, height segments
+
+// Define the material for the blob with a vibrant purple tone
 const material = new THREE.MeshStandardMaterial({
-    color: 0xff9f68, // Peachy tone for a "delicious" look
-    roughness: 0.3,  // Slightly shiny surface
-
-    //color: 0xff6347, // Tomato color
-    //roughness: 0.9,
-        //metalness: 0.5,
-
+    color: 0x9900cc, // Vibrant purple
+    roughness: 0.2,  // Slightly reflective surface
+    metalness: 0.1   // Gives it a "delicious" glossy effect
 });
+
+// Combine geometry and material into a mesh
 const sphere = new THREE.Mesh(geometry, material);
-scene.add(sphere);
+scene.add(sphere); // Add the blob to the scene
 
-// Morphing Effect
+/** Morphing Effect */
+
+// Create a clock to track time for smooth animations
 const clock = new THREE.Clock();
-/*function animate() {
-    const elapsedTime = clock.getElapsedTime();
 
-    const positionAttribute = geometry.attributes.position;
-    const vertex = new THREE.Vector3();
-
-    for (let i = 0; i < positionAttribute.count; i++) {
-        vertex.fromBufferAttribute(positionAttribute, i);
-
-        const offset = geometry.parameters.radius;
-        const amp = 0.2; // Amplitude
-        const time = elapsedTime * 2; // Speed
-
-        vertex.normalize();
-        const distance = offset + Math.sin(time + vertex.x * 2 + vertex.y * 2) * amp;
-        vertex.multiplyScalar(distance);
-
-        positionAttribute.setXYZ(i, vertex.x, vertex.y, vertex.z);
-    }
-
-    positionAttribute.needsUpdate = true;
-    sphere.rotation.y += 0.01;
-
-    renderer.render(scene, camera);
-    requestAnimationFrame(animate);
-}
-animate();*/
-
+// Animation function to morph the blob
 function animate() {
-    const elapsedTime = clock.getElapsedTime();
+    const elapsedTime = clock.getElapsedTime(); // Get elapsed time since the animation started
 
-    const positionAttribute = geometry.attributes.position;
-    const vertex = new THREE.Vector3();
+    const positionAttribute = geometry.attributes.position; // Access vertex positions
+    const vertex = new THREE.Vector3(); // Temporary vector for calculations
 
+    // Loop through each vertex to apply the morphing effect
     for (let i = 0; i < positionAttribute.count; i++) {
-        vertex.fromBufferAttribute(positionAttribute, i);
+        vertex.fromBufferAttribute(positionAttribute, i); // Get vertex data
 
-        const offset = geometry.parameters.radius;
-        const amp = 0.4; // Higher amplitude for exaggerated morphing
-        const time = elapsedTime * 1.5; // Slower, smoother morphing
+        vertex.normalize(); // Normalize to keep vertices on a sphere
+        const distance =
+            1.5 + // Base radius of the sphere
+            Math.sin(elapsedTime * 2 + vertex.x * 3 + vertex.y * 3) * 0.2 + // Smooth, subtle noise
+            Math.cos(elapsedTime * 3 + vertex.z * 2) * 0.1; // Add variation with cosine
+        vertex.multiplyScalar(distance); // Scale vertex positions
 
-        vertex.normalize();
-        const distance = offset + Math.sin(time + vertex.x * 3 + vertex.y * 3) * amp;
-        vertex.multiplyScalar(distance);
-
-        positionAttribute.setXYZ(i, vertex.x, vertex.y, vertex.z);
+        positionAttribute.setXYZ(i, vertex.x, vertex.y, vertex.z); // Update vertex data
     }
 
-    positionAttribute.needsUpdate = true;
-    sphere.rotation.y += 0.005; // Slow rotation
-    sphere.rotation.x += 0.003; // Add slight rotation on the X-axis
+    positionAttribute.needsUpdate = true; // Notify Three.js to re-render the updated geometry
 
+    // Rotate the blob slightly for a dynamic feel
+    sphere.rotation.y += 0.01; // Rotate on the Y-axis
+    sphere.rotation.x += 0.005; // Rotate on the X-axis
+
+    // Render the scene
     renderer.render(scene, camera);
+
+    // Continue the animation
     requestAnimationFrame(animate);
 }
+
+// Start the animation loop
 animate();
 
+/** Handle Window Resize */
 
-// Responsive Resize
+// Resize the renderer and camera when the window is resized
 window.addEventListener('resize', () => {
-    const width = canvas.clientWidth;
-    const height = canvas.clientHeight;
+    const width = blobCanvas.clientWidth;
+    const height = blobCanvas.clientHeight;
 
+    // Update camera aspect ratio and projection matrix
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
+
+    // Update renderer size
     renderer.setSize(width, height);
 });
