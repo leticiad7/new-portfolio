@@ -5,9 +5,13 @@
     box-sizing: border-box;
 }
 
+h1, p {
+    color: red;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #fff;
+    background-color: #000000;
     color: #fff;
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
@@ -33,6 +37,37 @@ body {
     color: #1e90ff;
 }
 
+/* Big Text Section */
+.big-text-section {
+    position: relative;
+    height: 100vh; /* Full viewport height for scrolling */
+    display: flex;
+    align-items: flex-start; /* Start aligning text closer to the top */
+    justify-content: center; /* Center horizontally */
+    color: red; /* Red text color */
+    overflow: hidden; /* Prevent horizontal scrolling */
+}
+
+.big-text {
+    font-size: 8vw; /* Scale dynamically with the viewport width */
+    font-weight: bold;
+    text-transform: lowercase;
+    line-height: 0.9; /* Tighten spacing between lines */
+    text-align: left; /* Align text to the left */
+    white-space: normal; /* Allow text wrapping */
+    word-break: break-word; /* Handle word breaks gracefully */
+    margin-top: -50px; /* Adjust spacing from the top */
+    z-index: 3; /* Place above other elements */
+}
+
+
+/* Optional: Add Sticky Effect for Big Text */
+.big-text {
+    position: sticky;
+    top: 50%; /* Stay in the middle of the viewport */
+    transform: translateY(-50%);
+}
+
 /* Image Section Layout */
 .image-section {
     display: grid;
@@ -41,7 +76,6 @@ body {
     padding: 40px;
     position: relative;
     margin-top: 50px;
-
 }
 
 /* General Image Styling */
@@ -53,14 +87,15 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
-.image-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns */
-    gap: 20px;
-    padding: 40px;
-    grid-auto-flow: dense; /* Enables resizing flexibility */
+/* Image 1: Top Right, Slightly Overflowing */
+.img-0 {
+    grid-column: 2 / 3;
+    grid-row: 1;
+    transform: translate(20%, -10%);
+    z-index: 2;
+    margin-top: 60px;
+    padding-top: 90px;
 }
-
 
 /* Image 1: Top Right, Slightly Overflowing */
 .img-1 {
@@ -69,7 +104,6 @@ body {
     transform: translate(20%, -10%);
     z-index: 2;
     margin-top: 30px;
-
 }
 
 /* Image 2: Left Column, Larger, Adjusted Margins */
@@ -81,7 +115,6 @@ body {
     transform-origin: left top; /* Anchor the scale to the top-left */
     z-index: 1;
 }
-
 
 /* Image 3: Right Column, Slightly Overflowing */
 .img-3 {
@@ -115,65 +148,6 @@ body {
     justify-self: center;
     width: 90%;
     margin-top: 40px;
-}
-
-/* Image 2: Ensure it's positioned correctly */
-.img-2 {
-    position: relative; /* Allows absolute positioning for the cube */
-    margin-left: 20px;
-    margin-top: 50px;
-    width: 500px; /* Adjust the size as necessary */
-    z-index: 1;
-}
-
-/* Image 2: Ensure it's positioned correctly */
-.img-2 {
-    position: relative; /* Allows absolute positioning for the cube */
-    margin-left: 20px;
-    margin-top: 50px;
-    width: 500px; /* Adjust the size as necessary */
-    z-index: 1;
-}
-
-/* Cube Canvas: Positioned on top of the image */
-.cube-section {
-    position: absolute; /* Ensures the cube is fixed */
-    top: 5%; /* Adjust position */
-    right: 5%; /* Keep in top-right corner */
-    width: 300px; /* Size of the canvas */
-    height: 300px;
-    z-index: 10; /* Ensure it is above other content */
-    pointer-events: none; /* Prevent interaction issues */
-}
-
-#cube-canvas {
-    width: 100%; /* Full size of container */
-    height: 100%;
-}
-
-/* Big Text Section */
-.big-text-section {
-    position: relative;
-    height: 100vh; /* Full screen */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: black;
-    color: white;
-    overflow: hidden;
-}
-
-.big-text {
-    font-size: 20vw; /* Dynamically scale with viewport */
-    font-weight: bold;
-    line-height: 0.9;
-    text-transform: uppercase;
-    color: white;
-    text-align: center;
-    position: sticky;
-    top: 50%; /* Sticks in the middle of the viewport */
-    transform: translateY(-50%);
-    z-index: 5;
 }
 
 /* Info Section */
