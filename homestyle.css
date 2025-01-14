@@ -6,7 +6,7 @@
 }
 
 h1, p {
-    color: red;
+    color: whitesmoke;
 }
 
 body {
@@ -15,7 +15,7 @@ body {
     color: #fff;
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
-
+/*************************************/
 /* Navigation */
 .navbar {
     position: fixed;
@@ -34,32 +34,51 @@ body {
 }
 
 .nav-links a:hover {
-    color: #1e90ff;
+    color: #868686;
 }
 
-/* Big Text Section */
-.big-text-section {
-    position: relative;
-    height: 100vh; /* Full viewport height for scrolling */
+/*************************************/
+/** Hero Section: Blob & Text **/
+
+.hero-section {
     display: flex;
-    align-items: flex-start; /* Start aligning text closer to the top */
-    justify-content: center; /* Center horizontally */
-    color: red; /* Red text color */
-    overflow: hidden; /* Prevent horizontal scrolling */
+    align-items: center; /* Centers content vertically */
+    justify-content: space-between; /* Spreads blob and text */
+    height: calc(100vh - 100px); /* Full height minus navbar */
+    padding-top: 80px; /* Adjust to reduce spacing under navbar */
 }
 
+/* Adjusting the big text */
 .big-text {
-    font-size: 8vw; /* Scale dynamically with the viewport width */
-    font-weight: bold;
+    font-size: 6vw; /* Scales with screen width */
+    line-height: 1.2; /* Adjusts line spacing */
     text-transform: lowercase;
-    line-height: 0.9; /* Tighten spacing between lines */
-    text-align: left; /* Align text to the left */
-    white-space: normal; /* Allow text wrapping */
-    word-break: break-word; /* Handle word breaks gracefully */
-    margin-top: -50px; /* Adjust spacing from the top */
-    z-index: 3; /* Place above other elements */
+    font-weight: bold;
+    margin: 0; /* Removes default margins */
+    color: #ff3f3f; /* Same red color */
+    text-align: right; /* Align text to the right */
+    padding-right: 90px;
 }
 
+.blob-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Takes full width of the left column */
+    height: 100%; /* Ensures the blob container fills its column */
+    overflow: visible; /* Allow content to overflow if needed */
+
+}
+
+#blob {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80vw; /* Full width of the viewport */
+    height: 80vh; /* Full height of the viewport */
+    overflow: visible; /* Allow overflow */
+    z-index: -1; /* Keep it behind the text */
+}
 
 /* Optional: Add Sticky Effect for Big Text */
 .big-text {
@@ -68,6 +87,7 @@ body {
     transform: translateY(-50%);
 }
 
+/*************************************/
 /* Image Section Layout */
 .image-section {
     display: grid;
@@ -82,7 +102,6 @@ body {
 .img-container img {
     width: 100%; /* Allow images to scale */
     height: auto;
-    border-radius: 15px;
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
 }
@@ -150,6 +169,7 @@ body {
     margin-top: 40px;
 }
 
+/*************************************/
 /* Info Section */
 .info-section {
     padding: 100px 20px;
@@ -171,3 +191,36 @@ body {
     margin-bottom: 20px;
     font-weight: bold;
 }
+/*************************************/
+/* Torus Sketch - p5.js 
+#torus-container {
+    width: 100%;
+    height: 100%;
+}
+
+.img-container.img-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+
+/* Last Img Section - p5.js */
+#p5-container {
+    width: 100%; /* Make it span the entire width of its parent */
+    height: 100%; /* Match the height of its container */
+    display: flex; /* Optional: Center alignment */
+    justify-content: center;
+    align-items: center;
+}
+
+.img-6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 600px; /* Ensure enough height for the sketch */
+    background-color: transparent; /* Optional: Ensure no conflicting backgrounds */
+}
+
+
+

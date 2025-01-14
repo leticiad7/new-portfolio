@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reflect Website</title>
-    <link rel="stylesheet" href="style2.css">
+    <title>Leticia Domingos | Portfolio</title>
+    <link rel="stylesheet" href="homestyle.css">
     <script src="script.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+    <script src="./p5-sketch.js"></script>
 </head>
 <body>
     <!-- Navigation -->
     <header class="navbar">
         <nav class="nav-links">
-            <a href="#gallery">Gallery</a>
-            <a href="#recognition">Recognition</a>
-            <a href="#shop">Shop</a>
+            <a href="#gallery">projects.</a>
+            <a href="#recognition">about me.</a>
         </nav>
     </header>
 
     <!-- Big Lettering Container -->
-          <section class="big-text-section">   
-    
-            <!-- Image 1: Top Right, Overflowing -->
-            <div class="img-container img-0">
-                <img src="./src/cc/cc-b&w.png" alt="Image 0">
+     <section class="hero-section">   
+        <!-- Image 1: Top Right, Overflowing -->
+            <div class="blob-container">
+                <canvas id="blob"></canvas>
             </div>
-    
-            <h1 class="big-text">Software engineer & creative technologist</h1>
+                <h1 class="big-text">Software engineer & creative technologist</h1>                
         </section>
 
     <!-- Gallery -->
@@ -34,13 +33,13 @@
 
             <!-- Image 2: Left Column, Larger, Margins Adjusted -->
             <div class="img-container img-2">
-                <img src="./src/cc/cc-b&w.png" alt="Image 2">
+                <img src="./src/cc/quadratic-bezier.png" alt="Image 2">
             </div>        
 
-        <!-- Image 1: Top Right, Overflowing -->
+        <!-- Image 1: Top Right, Overflowing 
         <div class="img-container img-1">
-            <img src="./src/cc/cc-b&w.png" alt="Image 2">
-        </div>
+            <img src="./src/cc/cc-b&w.png" alt="Image 1">
+        </div>-->
     
         <!-- Image 3: Right Column, Slightly Overflowing -->
         <div class="img-container img-3">
@@ -59,14 +58,14 @@
     
         <!-- Image 6: Centered in the Middle -->
         <div class="img-container img-6">
-            <img src="./src/cc/cc-b&w.png" alt="Image 6">
+            <div id="p5-container"></div> <!-- Container for the p5.js sketch -->
         </div>
     </section>
 
     <!-- Info Section -->
     <section class="info-section">
         <div class="info-content">
-            <h2>Info</h2>
+            <h2>ABOUT ME</h2>
             <p>
                 With a focus on dynamic and captivating forms, the multi-media artist known as Reflect explores themes of technology and connectivity. With a background in fine arts and digital media, the work of Reflect incorporates both physical and technological elements.
             </p>
@@ -79,7 +78,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2025 Reflect. All rights reserved.</p>
+        <p>&copy; 2025, by Leticia Domingos.</p>
     </footer>
 </body>
 </html>
