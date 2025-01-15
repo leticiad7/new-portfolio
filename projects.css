@@ -59,6 +59,8 @@
         grid-template-columns: repeat(2, 1fr); /* 2 columns */
         gap: 20px; /* Space between items */
         padding: 20px;
+
+        
     }
 
     /* Individual Gallery Items */
@@ -77,7 +79,6 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
         margin-bottom: 10px; /* Space between image and title */
         gap: 20px;
-
     }
 
     /* Titles */
@@ -94,3 +95,19 @@
             grid-template-columns: 1fr; /* Single column */
         }
     }
+
+    @media (min-width: 1440px) {
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Use 3 columns */
+            gap: 30px; /* Increase spacing between items */
+            padding: 40px;
+        }
+    
+        .gallery-item img {
+            max-width: 700px; /* Restrict maximum image width */
+            max-height: 700px; /* Keep aspect ratio */
+            margin: 0 auto; /* Center images in their container */
+        }
+    }
+    
