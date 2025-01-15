@@ -1,0 +1,75 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #000000;
+    color: whitesmoke;
+
+    line-height: 1.6;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+/*************************************/
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    z-index: 10;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #868686;
+}
+  
+  /* Page Title */
+  .page-title {
+    margin-top: 80px; /* Add space below navbar */
+    padding: 20px 40px;
+    text-align: left;
+  }
+  
+  .page-title h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  /* Photo Gallery */
+  .photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Space between photos */
+    padding: 40px;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px; /* Optional: Rounded corners */
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+  }
+  
+  .gallery-item img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  

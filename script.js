@@ -112,3 +112,4 @@ window.addEventListener('resize', () => {
     // Update renderer size
     renderer.setSize(width, height);
 });
+
