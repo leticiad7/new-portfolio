@@ -246,7 +246,6 @@ body {
 
         .info-content  p {
             font-size: 14px; /* Smaller font size for mobile */
-            line-height: 1.3; /* Adjust line spacing for smaller text */
             padding: 5px; /* Add some padding for better spacing */
         }
 
