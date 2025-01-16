@@ -3,80 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leticia Domingos | Portfolio</title>
-    <link rel="stylesheet" href="homestyle.css">
-    <script src="script.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
-    <script src="./p5-sketch.js"></script>
+    <title>Welcome</title>
+    <link rel="stylesheet" href="welcome.css">
+    <script defer src="welcome.js"></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <header class="navbar">
-        <nav class="nav-links">
-            <a href="./index.html">home.</a>
-            <a href="./projects.html">projects.</a>
-            <a href="#recognition">about me.</a>
-        </nav>
-    </header>
-    <!-- Blob Scroll -->
-        <div id="scroll-blob"></div>
-
-    <!-- Big Lettering Container -->
-     <section class="hero-section">   
-        <!-- Image 1: Top Right, Overflowing -->
-            <div class="blob-container">
-                <canvas id="blob"></canvas>
-            </div>
-                <h1 class="big-text">Software engineer & creative technologist</h1>                
-            </section>
-
-    <!-- Gallery -->
-        <section class="image-section">
-
-        <!-- Image 2: Left Column, Larger, Margins Adjusted -->
-        <div class="img-container img-2">
-            <img src="./src/regis.gif" alt="Regis">
-        </div>        
-
-        <!-- Image 1: Top Right, Overflowing-->
-        <div class="img-container img-1">
-            <img src="./src/particle.png" alt="Image 1"> 
-        </div> 
-    
-        <!-- Image 3: Right Column, Slightly Overflowing-->
-        <div class="img-container img-3">
-            <img src="./src/lorenz-attractor.gif" alt="Image 3">
+    <div class="welcome-container">
+        <div id="p5-canvas-container">
+            <h1 id="welcome-text">WELCOME</h1> 
         </div>
-    
-        <!-- Image 4: Left Column, Smaller Image -->
-        <div class="img-container img-4">
-            <img src="./src/sine-wave.png" alt="Image 4">
-        </div>
-    
-        <!-- Image 6: Centered in the Middle -->
-        <div class="img-container img-6">
-            <div id="p5-container"></div> <!-- Container for the p5.js sketch -->
-        </div>
-    </section>
 
-    <!-- Info Section -->
-    <section class="info-section">
-        <div class="info-content">
-            <h2>ABOUT ME</h2>
-            <p class="about-me-p">
-                With a focus on dynamic and captivating forms, the multi-media artist known as Reflect explores themes of technology and connectivity. With a background in fine arts and digital media, the work of Reflect incorporates both physical and technological elements.
-                With a focus on dynamic and captivating forms, the multi-media artist known as Reflect explores themes of technology and connectivity. With a background in fine arts and digital media, the work of Reflect incorporates both physical and technological elements.
-            </p>
-        </div>
-    </section>
-        
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025, by Leticia Domingos.</p>
-    </footer>
+        <p class="question">Which device are you using to view this website?</p>
+        <div class="buttons">
+            <button class="button" onclick="redirectTo('desktop.html')">Desktop</button>
+            <button class="button" onclick="redirectTo('mobile.html')">Mobile</button>
+    </div>
 </body>
 </html>
-
-
