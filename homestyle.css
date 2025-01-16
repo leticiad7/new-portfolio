@@ -278,4 +278,8 @@ body {
     .about-me-p {
         font-size: 22px;
     }
+
+    .img-container{
+        margin: 10px;
+    }
 }

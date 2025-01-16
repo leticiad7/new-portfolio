@@ -3,23 +3,28 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     font-family: 'Arial', sans-serif;
-    color: #333;
     background-color: #000000;
     color: whitesmoke;
-
     line-height: 1.6;
-  }
-  
-  a {
+}
+
+a {
     text-decoration: none;
-    color: #333;
-  }
-  
-/*************************************/
+    color: #fff; /* Default link color */
+}
+
+a:hover {
+    color: #868686; /* Hover color */
+}
+
+a:visited {
+    color: #fff; /* Visited link color */
+}
+
 /* Navigation */
 .navbar {
     position: fixed;
@@ -31,83 +36,92 @@
 
 .nav-links a {
     margin-left: 20px;
-    color: #fff;
-    text-decoration: none;
     font-size: 16px;
     font-weight: bold;
 }
 
-.nav-links a:hover {
-    color: #868686;
+/* Page Title */
+.page-title a {
+    text-decoration: none; /* Default: No underline */
+    color: #fff; /* Ensure consistent color */
 }
-  
-  /* Page Title */
-  .page-title {
+
+.page-title a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.page-title a.active {
+    text-decoration: underline; /* Underline for active link */
+    font-weight: bold; /* Optional: Make the active link bold */
+}
+
+.page-title {
     margin-top: 80px; /* Add space below navbar */
     padding: 20px 40px;
-    text-align: left;
-  }
-  
-  .page-title h1 {
-    font-size: 2.5rem;
+    text-align: center;
+}
+
+.page-title h4 {
+    font-size: 1.5rem;
     font-weight: bold;
 }
-  
-  /* Project Gallery */
+
+/* Project Gallery */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-item {
+    display: flex;
+    flex-direction: column; /* Stack image and title */
+    align-items: center;
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%; /* Make images responsive */
+    height: 600px; /* Maintain consistent height */
+    border-radius: 10px; /* Optional rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    margin-bottom: 10px; /* Space below image */
+}
+
+/* Titles */
+.project-title {
+    font-size: 16px;
+    font-weight: normal; /* Remove bold effect */
+    text-align: center;
+    margin: 10px 0 0;
+}
+
+/* Media Queries */
+/* Mobile: Single Column Layout */
+@media (max-width: 768px) {
     .project-gallery {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
-        gap: 20px; /* Space between items */
-        padding: 20px;
-
-        
+        grid-template-columns: 1fr;
     }
 
-    /* Individual Gallery Items */
-    .gallery-item {
-        display: flex;
-        flex-direction: column; /* Stack image and title */
-        align-items: center; /* Center content */
-        text-align: center; /* Center title text */
+    .footer p {
+        font-size: 12px; /* Smaller text for footer */
+        line-height: 1.3;
+        padding: 5px;
+    }
+}
+
+/* Desktop: Adjust Layout for Large Screens */
+@media (min-width: 1440px) {
+    .project-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 40px;
     }
 
-    /* Images */
     .gallery-item img {
-        width: 100%; /* Make images responsive */
-        height: 600px; /* Maintain aspect ratio */
-        border-radius: 10px; /* Optional: Add rounded corners */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
-        margin-bottom: 10px; /* Space between image and title */
-        gap: 20px;
+        max-width: 700px; /* Restrict maximum width */
+        max-height: 700px; /* Restrict maximum height */
+        margin: 0 auto; /* Center image */
     }
-
-    /* Titles */
-    .project-title {
-        font-size: 16px; /* Keep the title size */
-        font-weight: normal; /* Remove bold effect */
-        color: #fff; /* Ensure the color matches the design */
-        text-align: center; /* Center-align the title */
-        margin: 10px 0 0; /* Add spacing if needed */
-    }
-
-    @media (max-width: 768px) { /* Target smaller screens */
-        .project-gallery {
-            grid-template-columns: 1fr; /* Single column */
-        }
-    }
-
-    @media (min-width: 1440px) {
-        .project-gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Use 3 columns */
-            gap: 30px; /* Increase spacing between items */
-            padding: 40px;
-        }
-    
-        .gallery-item img {
-            max-width: 700px; /* Restrict maximum image width */
-            max-height: 700px; /* Keep aspect ratio */
-            margin: 0 auto; /* Center images in their container */
-        }
-    }
-    
+}
