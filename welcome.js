@@ -9,7 +9,6 @@ const languages = [
     "أهلاً وسهلاً", // Arabic
     "BEM VINDO", 
     "WILLKOMMEN", 
-    "BIENVENIDO", 
     "환영합니다", // Korean
     "欢迎",      // Simplified Chinese
     "स्वागत है",  // Hindi

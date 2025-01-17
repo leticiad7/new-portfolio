@@ -52,7 +52,7 @@ body {
     line-height: 1.2; /* Adjusts line spacing */
     text-transform: lowercase;
     font-weight: bold;
-    margin: 0; /* Removes default margins */
+    margin: 20px; /* Removes default margins */
     color: #fbfbfb; /* Same red color */
     text-align: right; /* Align text to the right */
     padding-right: 90px;
@@ -81,8 +81,7 @@ body {
 /* Optional: Add Sticky Effect for Big Text */
 .big-text {
     position: sticky;
-    top: 50%; /* Stay in the middle of the viewport */
-    transform: translateY(-80%);
+    top: 30%; /* Stay in the middle of the viewport */
     transition: transform 0.1s ease-out; /* Adjust timing as needed */
 }
 
@@ -207,79 +206,3 @@ body {
     background-color: transparent; /* Optional: Ensure no conflicting backgrounds */
 }
 
-@media (max-width: 768px) {
-        #blob {
-            width: 120vw; /* Adjust blob size for smaller screens */
-            height: 80vh;
-        }
-        .image-section {
-            display: flex;
-            flex-direction: column; /* Stack items vertically */
-            width: 100%; /* Full-width container */
-            gap: 10px;
-            align-items: center; /* Center content horizontally */
-        }
-    
-        .img-container {
-            width: 100%; /* Each image container takes full width */
-            text-align: center; /* Center the images */
-            margin: 0; /* Remove extra margins */
-            padding: 0; /* Remove extra padding */
-        }
-    
-        .img-container img {
-            width: 100%; /* Images span full width of their containers */
-            height: auto; /* Maintain aspect ratio */
-            object-fit: contain; /* Prevent cropping */
-        }
-    
-        #p5-container {
-            width: 100%; /* Ensure p5.js sketch spans full width */
-            height: auto;
-        }
-
-        .info-content h2 {
-            font-size: 16px; /* Smaller font size for mobile */
-            line-height: 1.3; /* Adjust line spacing for smaller text */
-            padding: 5px; /* Add some padding for better spacing */
-        }
-
-        .info-content  p {
-            font-size: 14px; /* Smaller font size for mobile */
-            padding: 5px; /* Add some padding for better spacing */
-        }
-
-        .footer p {
-            font-size: 10px; /* Smaller font size for mobile */
-            line-height: 1.3; /* Adjust line spacing for smaller text */
-            padding: 5px; /* Add some padding for better spacing */
-        }
-    }
-    
-
-@media (min-width: 1440px) {
-    #blob {
-        width: 100vw; /* Adjust blob size for larger screens */
-        height: 50vh;
-    }
-}
-
-/* Larger Screens (e.g., Desktop) */
-@media (min-width: 1024px) {
-    .navbar {
-        padding: 30px 60px; /* Add more padding for desktop */
-    }
-
-    .nav-links a {
-        font-size: 22px; /* Increase font size for desktop */
-        margin-left: 40px; /* More spacing between links */
-    }
-
-    .about-me-p {
-        font-size: 22px;
-    }
-
-    .img-container{
-        margin: 10px;
-    }
-}
