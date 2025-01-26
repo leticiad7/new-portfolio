@@ -32,10 +32,6 @@ body {
     font-weight: bold;
 }
 
-.nav-links a:hover {
-    color: #868686;
-}
-
 /*************************************/
 /** Hero Section: Blob & Text **/
 .hero-section {

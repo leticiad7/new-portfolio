@@ -1,0 +1,146 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica', sans-serif;
+
+}
+
+body {
+    color: rgb(0, 0, 0);
+    line-height: 1.6;
+    padding-top: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+a:hover {
+    color: rgb(0, 0, 0);
+}
+
+a:visited {
+    color: rgb(0, 0, 0);
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    z-index: 10;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 100px;    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    margin: 40px auto; 
+    max-width: 800px; 
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Hero Image */
+.hero img {
+    max-width: 100%; /* Ensure the image is responsive */
+    height: auto;
+    margin-bottom: 20px; /* Add spacing below the image */
+    border-radius: 10px; /* Rounded corners for the image */
+}
+
+/* Hero Content */
+.hero-content {
+    margin: 40px 0; /* Space above and below the content */
+}
+
+.hero-content h2 {
+    font-size: 2rem; /* Larger heading font */
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #555;
+    line-height: 1.6;
+}
+
+
+/* Section Styling */
+/* Project Background Section */
+/* General Section Styling */
+section {
+    margin: 40px auto; /* Space between sections */
+    padding: 30px; /* Consistent internal padding for all sections */
+    max-width: 800px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings for Sections */
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px; /* Consistent space below headings */
+    text-align: center;
+    color: #333;
+}
+
+/* Paragraphs Inside Sections */
+section p {
+    font-size: 1rem;
+    margin-bottom: 15px; /* Space between paragraphs */
+    line-height: 1.8;
+    text-align: center;
+    color: #555;
+}
+
+/* Lists Inside Sections */
+section ul {
+    list-style: disc;
+    padding-left: 20px; /* Indentation for list items */
+    margin-top: 20px; /* Space above the list */
+}
+
+section ul li {
+    font-size: 1rem;
+    margin-bottom: 15px; /* Space between list items */
+    line-height: 1.6;
+    color: #555;
+}
+
+section ul li strong {
+    color: #333; /* Highlighted heading in list items */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero img {
+        width: 100%;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+}

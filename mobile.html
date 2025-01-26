@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leticia Domingos | Portfolio</title>
+    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+    <script src="./p5-sketch.js"></script>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: whitesmoke;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .nav-links a {
+            margin: 0 10px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .blob-container {
+            width: 100%;
+            max-width: 300px;
+            height: auto; /* Prevent extra height */
+            margin: 0 auto; /* Center the blob */
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #blob {
+            display: block;
+            width: 100%;
+            max-width: 300px; /* Restrict the size */
+            height: auto;
+        }
+
+        .hero-section h1 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 6vw;
+            line-height: 1.2;
+        }
+
+        .image-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .image-section img {
+            width: 90%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-section {
+            width: 100%;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .info-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Projects</a>
+            <a href="#">About Me</a>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="blob-container">
+            <canvas id="blob"></canvas>
+        </div>
+        <h1>Software Engineer & Creative Technologist</h1>
+    </section>
+
+    <section class="image-section">
+        <img src="./src/regis.gif" alt="Regis">
+        <img src="./src/particle.png" alt="Particle">
+        <img src="./src/lorenz-attractor.gif" alt="Lorenz Attractor">
+        <img src="./src/sine-wave.png" alt="Sine Wave">
+        <div class="img-container img-6">
+            <div id="p5-container"></div> <!-- Container for the p5.js sketch -->
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="info-content">
+            <h2>About Me</h2>
+            <p>Leticia Domingos is a Software Engineer and Creative Technologist based in London. With a background in Oceanography and Artificial Intelligence, Leticia combines her technical expertise and artistic curiosity to explore the intersection of technology and creativity.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 by Leticia Domingos.</p>
+    </footer>
+</body>
+</html>
